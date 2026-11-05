@@ -1,11 +1,21 @@
 {
   "name": "automation-testing",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
+  "description": "Playwright + TypeScript UI test framework using the Page Object Model",
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test --project=chromium",
+    "test:smoke": "playwright test --project=chromium --grep @smoke",
+    "test:regression": "playwright test --project=chromium --grep @regression",
+    "test:a11y": "playwright test --project=chromium --grep @a11y",
+    "test:all-browsers": "playwright test",
+    "typecheck": "tsc --noEmit",
+    "report": "playwright show-report"
   },
   "devDependencies": {
-    "@playwright/test": "^1.49.0"
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
   }
 }

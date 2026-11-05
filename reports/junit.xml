@@ -1,0 +1,298 @@
+<testsuites id="" name="" tests="70" failures="0" skipped="70" errors="0" time="0.39534099999999944">
+<testsuite name="auth.setup.ts" timestamp="2026-11-05T04:49:31.286Z" hostname="setup" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="log in as standard_user and save session" classname="auth.setup.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="accessibility.spec.ts" timestamp="2026-11-05T04:49:31.286Z" hostname="chromium" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Accessibility scan @a11y › login page has no critical violations" classname="accessibility.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility scan @a11y › signed in › products page has no critical violations" classname="accessibility.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility scan @a11y › signed in › cart page has no critical violations" classname="accessibility.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Accessibility scan @a11y › signed in › checkout form has no critical violations" classname="accessibility.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="cart.spec.ts" timestamp="2026-11-05T04:49:31.286Z" hostname="chromium" tests="9" failures="0" skipped="9" time="0" errors="0">
+<testcase name="Shopping cart › adding one product updates the badge and button @smoke @regression" classname="cart.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Shopping cart › badge counts several products @regression" classname="cart.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Shopping cart › removing from the products page clears the badge @regression" classname="cart.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Shopping cart › cart page lists exactly the chosen products @smoke @regression" classname="cart.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Shopping cart › removing from the cart page updates the list and badge @regression" classname="cart.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Shopping cart › cart contents survive moving between pages @regression" classname="cart.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Shopping cart › cart contents survive a page reload @regression" classname="cart.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Shopping cart › Reset App State clears the cart badge @regression" classname="cart.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Shopping cart › Reset App State puts the product button back to &quot;Add to cart&quot; @known-bug" classname="cart.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="checkout.spec.ts" timestamp="2026-11-05T04:49:31.286Z" hostname="chromium" tests="10" failures="0" skipped="10" time="0" errors="0">
+<testcase name="Checkout › buy one product end to end @smoke @regression" classname="checkout.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout › order totals are calculated correctly for several products @smoke @regression" classname="checkout.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout › after the order the cart is empty and Back Home works @regression" classname="checkout.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout › missing first name shows an error @regression" classname="checkout.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout › missing last name shows an error @regression" classname="checkout.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout › missing postal code shows an error @regression" classname="checkout.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout › Cancel leaves the checkout and keeps the cart @regression" classname="checkout.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout: known defects › checkout is blocked when the cart is empty @known-bug" classname="checkout.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout: known defects › postal code with letters is rejected @known-bug" classname="checkout.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout: known defects › whitespace-only names are rejected @known-bug" classname="checkout.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="inventory.spec.ts" timestamp="2026-11-05T04:49:31.286Z" hostname="chromium" tests="14" failures="0" skipped="14" time="0" errors="0">
+<testcase name="Product catalogue › shows all six products with the right names and prices @smoke @regression" classname="inventory.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product catalogue › each product has its own image @regression" classname="inventory.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product catalogue › default sort is Name A to Z @regression" classname="inventory.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product catalogue › sort by name A to Z @regression" classname="inventory.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product catalogue › sort by name Z to A @regression" classname="inventory.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product catalogue › sort by price low to high @smoke @regression" classname="inventory.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product catalogue › sort by price high to low @regression" classname="inventory.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product catalogue › detail page for &quot;Sauce Labs Backpack&quot; @regression" classname="inventory.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product catalogue › detail page for &quot;Sauce Labs Bike Light&quot; @regression" classname="inventory.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product catalogue › detail page for &quot;Sauce Labs Bolt T-Shirt&quot; @regression" classname="inventory.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product catalogue › detail page for &quot;Sauce Labs Fleece Jacket&quot; @regression" classname="inventory.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product catalogue › detail page for &quot;Sauce Labs Onesie&quot; @regression" classname="inventory.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product catalogue › detail page for &quot;Test.allTheThings() T-Shirt (Red)&quot; @regression" classname="inventory.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Product catalogue › product can be added from its detail page @regression" classname="inventory.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="login.spec.ts" timestamp="2026-11-05T04:49:31.286Z" hostname="chromium" tests="18" failures="0" skipped="18" time="0" errors="0">
+<testcase name="Login › valid user reaches the products page @smoke @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login › is rejected: locked out user @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login › is rejected: wrong password @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login › is rejected: unknown user @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login › is rejected: empty username @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login › is rejected: empty password @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login › is rejected: both fields empty @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login › is rejected: username in wrong case @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login › is rejected: username with leading space @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login › is rejected: SQL injection text @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login › password field masks what is typed @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login › error banner can be dismissed @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login › Enter key submits the form @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Session and access control › /inventory.html is blocked without login @smoke @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Session and access control › /cart.html is blocked without login @smoke @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Session and access control › /checkout-step-one.html is blocked without login @smoke @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Session and access control › logout returns to the login page @smoke @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Session and access control › Back button after logout does not reopen the shop @regression" classname="login.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="personas.spec.ts" timestamp="2026-11-05T04:49:31.286Z" hostname="chromium" tests="8" failures="0" skipped="8" time="0" errors="0">
+<testcase name="problem_user › every product shows its own image @known-bug" classname="personas.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="problem_user › sort by name Z to A reorders the list @known-bug" classname="personas.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="problem_user › Fleece Jacket can be added to the cart @known-bug" classname="personas.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="problem_user › last name can be entered at checkout @known-bug" classname="personas.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="error_user › sorting works without an error alert @known-bug" classname="personas.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="error_user › Bolt T-Shirt can be added to the cart @known-bug" classname="personas.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="performance_glitch_user › products appear within 3 seconds of logging in @known-bug" classname="personas.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="visual_user › prices match the standard catalogue @known-bug" classname="personas.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="responsive.spec.ts" timestamp="2026-11-05T04:49:31.286Z" hostname="chromium" tests="6" failures="0" skipped="6" time="0" errors="0">
+<testcase name="phone 375x667 › products page has no horizontal scroll @regression" classname="responsive.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="phone 375x667 › cart and menu are usable @regression" classname="responsive.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="tablet 768x1024 › products page has no horizontal scroll @regression" classname="responsive.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="tablet 768x1024 › cart and menu are usable @regression" classname="responsive.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="desktop 1366x768 › products page has no horizontal scroll @regression" classname="responsive.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="desktop 1366x768 › cart and menu are usable @regression" classname="responsive.spec.ts">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>
