@@ -9,10 +9,10 @@ A maintainable UI test framework for https://www.saucedemo.com. It shows how to 
 |---|---|
 | Tests | **115** in 10 spec files, plus a one-time login setup |
 | Traceability | **82 of 87 manual test cases (94%) automated** and 86 of 87 counting the browser matrix; each test links to its manual case, see [docs/traceability.md](docs/traceability.md) |
-| Known site defects | **30 expected-failure tests** that capture **all 20** defects found by the manual project |
+| Known site defects | **30 expected-failure tests** that capture **all 20** defects found by the manual-testing repo |
 | Browsers and devices | Chromium, Firefox, WebKit (Safari's engine) and a Pixel 7 phone profile in CI; real Microsoft Edge 156 locally |
-| Stability | Every test run 3 times in a row: **339 runs, 0 flaky, 0 unexpected failures**. A nightly CI job repeats this 5 times |
-| Quality gates | Strict TypeScript, ESLint with Playwright rules (zero warnings allowed), traceability document checked for staleness |
+| Stability | Every test run 3 times in a row: **345 runs, 0 flaky, 0 unexpected failures**. A nightly CI job repeats this 5 times |
+| Quality gates | Strict TypeScript, ESLint with Playwright rules (zero warnings allowed), traceability document checked for staleness, dependency audit (fails on high; currently 0 advisories) |
 | Accessibility | axe-core scan of all 7 pages **and** direct keyboard tests (the scan alone missed a keyboard blocker) |
 
 ## What it found that nothing else did
@@ -40,7 +40,7 @@ flowchart LR
 Full conventions, naming rules and a "how to add a test" checklist: [docs/test-design.md](docs/test-design.md).
 
 ```
-automation-testing/
+playwright-ui-automation-pom/
   pages/            LoginPage, InventoryPage, ProductDetailPage, CartPage, Checkout*Page, BasePage
     components/     HeaderMenu
   fixtures/         index.ts  (test.extend with page objects, STANDARD_STATE, shopWithCart, completeOrder)
