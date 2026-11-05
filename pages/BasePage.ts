@@ -16,6 +16,14 @@ export abstract class BasePage {
     return this.page.getByTestId('title');
   }
 
+  /** Identifies the element that currently has keyboard focus: its data-test, else its id, else its tag. */
+  async focusedKey(): Promise<string> {
+    return this.page.evaluate(() => {
+      const e = document.activeElement;
+      return (e && (e.getAttribute('data-test') || e.id || e.tagName)) || 'none';
+    });
+  }
+
   async expectOnPage(): Promise<void> {
     const escaped = this.path.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     await expect(this.page).toHaveURL(new RegExp(`${escaped}(\\?.*)?$`)); // allow a query string such as ?id=4

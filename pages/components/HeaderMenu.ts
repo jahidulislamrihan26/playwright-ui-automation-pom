@@ -50,4 +50,14 @@ export class HeaderMenu {
   get allItems(): Locator {
     return this.allItemsLink;
   }
+
+  /** Where the "About" link points (the link exists in the page even while the menu is closed). */
+  async aboutHref(): Promise<string | null> {
+    return this.page.locator('#about_sidebar_link').getAttribute('href');
+  }
+
+  /** Addresses of the social links in the page footer. */
+  async footerLinks(): Promise<string[]> {
+    return this.page.locator('footer a').evaluateAll((a) => a.map((x) => (x as HTMLAnchorElement).href));
+  }
 }
