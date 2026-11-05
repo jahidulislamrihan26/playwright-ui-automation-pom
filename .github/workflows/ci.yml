@@ -50,7 +50,7 @@ jobs:
         run: |
           node tools/trace.js
           git diff --exit-code docs/traceability.md
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: playwright-report-${{ matrix.project }}
@@ -75,7 +75,7 @@ jobs:
       - name: Run summary
         if: always()
         run: node tools/summary.js >> "$GITHUB_STEP_SUMMARY"
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: stability-report
