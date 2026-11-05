@@ -15,6 +15,8 @@ A maintainable UI test framework for https://www.saucedemo.com. It shows how to 
 | Quality gates | Strict TypeScript, ESLint with Playwright rules (zero warnings allowed), traceability document checked for staleness, dependency audit (fails on high; currently 0 advisories) |
 | Accessibility | axe-core scan of all 7 pages **and** direct keyboard tests (the scan alone missed a keyboard blocker) |
 
+[![The Playwright report: 116 results (115 tests plus the one-time login setup), 0 failed, 0 flaky](docs/images/report-overview.png)](https://jahidulislamrihan26.github.io/playwright-ui-automation-pom/)
+
 ## What it found that nothing else did
 While writing the keyboard tests I discovered that the cart icon **cannot be reached with Tab and does nothing on Enter or Space** (it is an `<a role="button">` with no `href`). A keyboard-only shopper cannot open the cart or check out: **BUG-020, Critical**. The automated accessibility scan reported no violation, and so had my first manual keyboard pass. The defect was added to the [manual-testing repo](https://github.com/jahidulislamrihan26/manual-testing-saucedemo/blob/main/defects/BUG-020.md) and the test that captures it is `[TC-086]` in [keyboard.spec.ts](tests/keyboard.spec.ts).
 
