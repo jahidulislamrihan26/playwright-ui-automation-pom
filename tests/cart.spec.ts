@@ -80,7 +80,7 @@ test.describe('Shopping cart', () => {
     await inventoryPage.header.expectCartCount(0);
   });
 
-  // KNOWN DEFECT (manual project BUG-003). test.fail() = we EXPECT this to fail today;
+  // KNOWN DEFECT (manual-testing repo BUG-003). test.fail() = we EXPECT this to fail today;
   // if the site is fixed the test starts "passing unexpectedly" and tells us to remove the annotation.
   test('[TC-034] Reset App State puts the product button back to "Add to cart" [BUG-003] @known-bug', async ({ inventoryPage }) => {
     test.fail(true, 'BUG-003: button still shows Remove after Reset App State');

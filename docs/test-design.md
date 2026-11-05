@@ -24,12 +24,12 @@ Every test title has this shape:
 ```
 
 - **`[TC-nnn]`** links the test to a case in the manual suite. `npm run trace` reads these and writes [traceability.md](traceability.md). CI fails if that file is out of date, so the link can never silently rot.
-- **`[BUG-nnn]`** links a known-defect test to its defect report in the manual project.
+- **`[BUG-nnn]`** links a known-defect test to its defect report in the manual-testing repo.
 - **Tags** choose what to run: `@smoke` (quick, run on every change), `@regression`, `@a11y`, `@security`, `@keyboard`, `@navigation`, `@known-bug`.
 - A test with no manual case simply has no `[TC-]` prefix (extra automated coverage is welcome).
 
 ## 3. Known-defect tests (`@known-bug`)
-When the manual project finds a real defect, the automated suite records it as a test that states the **correct** behaviour and is marked `test.fail(true, 'BUG-nnn: ...')`:
+When the manual-testing repo finds a real defect, the automated suite records it as a test that states the **correct** behaviour and is marked `test.fail(true, 'BUG-nnn: ...')`:
 
 - While the defect exists the assertion fails, which Playwright reports as an **expected** failure, so CI stays green.
 - When someone fixes the defect, the test starts to pass, and Playwright reports "expected to fail, but passed". That is the signal to remove the `test.fail` line; the test then becomes a normal regression test.

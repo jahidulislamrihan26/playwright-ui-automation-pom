@@ -17,6 +17,8 @@
     "test:stability": "playwright test --project=chromium --repeat-each=5",
     "summary": "node tools/summary.js",
     "trace": "node tools/trace.js",
+    "trace:refresh": "node tools/refresh-manual.js && node tools/trace.js",
+    "check-links": "node tools/check-links.js",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
     "report": "playwright show-report"

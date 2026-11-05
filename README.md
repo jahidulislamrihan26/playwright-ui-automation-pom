@@ -1,4 +1,6 @@
-# UI Automation Project: Playwright + TypeScript + Page Object Model
+# UI Automation: Playwright + TypeScript + Page Object Model
+
+[![CI](https://github.com/jahidulislamrihan26/playwright-ui-automation-pom/actions/workflows/ci.yml/badge.svg)](https://github.com/jahidulislamrihan26/playwright-ui-automation-pom/actions/workflows/ci.yml) Part of the [SQA portfolio](https://github.com/jahidulislamrihan26/sqa-portfolio). [Live report](https://jahidulislamrihan26.github.io/playwright-ui-automation-pom/).
 
 A maintainable UI test framework for https://www.saucedemo.com. It shows how to structure automation so tests read like plain English, one change in the site means one fix in the code, every test points back to the manual test case it automates, and failures explain themselves.
 
@@ -14,7 +16,7 @@ A maintainable UI test framework for https://www.saucedemo.com. It shows how to 
 | Accessibility | axe-core scan of all 7 pages **and** direct keyboard tests (the scan alone missed a keyboard blocker) |
 
 ## What it found that nothing else did
-While writing the keyboard tests I discovered that the cart icon **cannot be reached with Tab and does nothing on Enter or Space** (it is an `<a role="button">` with no `href`). A keyboard-only shopper cannot open the cart or check out: **BUG-020, Critical**. The automated accessibility scan reported no violation, and so had my first manual keyboard pass. The defect was added to the [manual project](../manual-testing/defects/BUG-020.md) and the test that captures it is `[TC-086]` in [keyboard.spec.ts](tests/keyboard.spec.ts).
+While writing the keyboard tests I discovered that the cart icon **cannot be reached with Tab and does nothing on Enter or Space** (it is an `<a role="button">` with no `href`). A keyboard-only shopper cannot open the cart or check out: **BUG-020, Critical**. The automated accessibility scan reported no violation, and so had my first manual keyboard pass. The defect was added to the [manual-testing repo](https://github.com/jahidulislamrihan26/manual-testing-saucedemo/blob/main/defects/BUG-020.md) and the test that captures it is `[TC-086]` in [keyboard.spec.ts](tests/keyboard.spec.ts).
 
 ## How it is organised
 ```mermaid
@@ -70,7 +72,7 @@ automation-testing/
 | error_user | BUG-008, 009, 010 |
 | visual_user, performance_glitch_user | BUG-011, BUG-012 |
 
-Details are in [the manual-testing defect reports](../manual-testing/defects).
+Details are in [the manual-testing defect reports](https://github.com/jahidulislamrihan26/manual-testing-saucedemo/tree/main/defects).
 
 ## Run it
 ```bash
@@ -98,3 +100,8 @@ Set `BASE_URL` to test another environment and `SAUCE_PASSWORD` to change the sh
 - No screenshot-comparison tests: baselines differ between operating systems. The one manual case that needs it (TC-058) stays manual.
 - Locally verified on Chromium, Edge and the phone profile. Firefox and WebKit run in CI.
 - Targets a public practice site; if it changes, the nightly CI run will show it.
+
+## Related projects
+- [manual-testing-saucedemo](https://github.com/jahidulislamrihan26/manual-testing-saucedemo): the manual test suite and 20 defect reports this project automates (snapshot of its test cases in `data/manual-test-cases.csv`; refresh with `npm run trace:refresh`).
+- [api-testing-newman-openapi](https://github.com/jahidulislamrihan26/api-testing-newman-openapi) and [k6-performance-testing](https://github.com/jahidulislamrihan26/k6-performance-testing): API and performance testing.
+- [qa-templates](https://github.com/jahidulislamrihan26/qa-templates): reusable test plan and report templates.

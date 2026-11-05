@@ -35,7 +35,7 @@ test.describe('Keyboard @a11y @keyboard', () => {
     }).toPass({ timeout: 5000 });
   });
 
-  // KNOWN DEFECT (manual project BUG-020, found while writing this suite): the cart link is an <a role="button"> without
+  // KNOWN DEFECT (manual-testing repo BUG-020, found while writing this suite): the cart link is an <a role="button"> without
   // an href, so Tab skips it and Enter does nothing. A keyboard-only shopper cannot open the cart.
   test('[TC-086] the cart can be reached with Tab and opened with Enter [BUG-020] @known-bug', async ({ page, inventoryPage, cartPage }) => {
     test.fail(true, 'BUG-020: the cart link cannot be reached or activated with the keyboard');
@@ -49,7 +49,7 @@ test.describe('Keyboard @a11y @keyboard', () => {
     await cartPage.expectOnPage();
   });
 
-  // KNOWN DEFECT (manual project BUG-016): found by keyboard testing; the automated scan reports no violations.
+  // KNOWN DEFECT (manual-testing repo BUG-016): found by keyboard testing; the automated scan reports no violations.
   for (const [name, selector] of [
     ['the menu button', '#react-burger-menu-btn'],
     ['the sort menu', '[data-test="product-sort-container"]'],

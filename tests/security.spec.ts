@@ -1,7 +1,7 @@
 import { test, expect } from '../fixtures';
 import { users } from '../data/users';
 
-// Security checks found by the second round of manual testing (manual-testing project, charter 4).
+// Security checks found by the second round of manual testing (manual-testing repo, charter 4).
 // "Known defect" tests state the CORRECT behaviour and are marked test.fail().
 test.use({ storageState: { cookies: [], origins: [] } });
 

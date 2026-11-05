@@ -1,0 +1,108 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *' # nightly: catches changes in the public site under test
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ui:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { project: chromium, install: chromium }
+          - { project: firefox, install: firefox }
+          - { project: webkit, install: webkit }
+          - { project: mobile-chrome, install: chromium } # a phone profile on the Chromium engine
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - name: Every relative link in the documents works
+        run: node tools/check-links.js
+      # The one-time login setup runs in Chromium, so every matrix job needs it as well as its own browser.
+      - run: npx playwright install --with-deps chromium ${{ matrix.install }}
+      - run: npx playwright test --project=${{ matrix.project }}
+      - name: Run summary
+        if: always()
+        run: node tools/summary.js >> "$GITHUB_STEP_SUMMARY"
+      - name: Traceability document is up to date
+        if: matrix.project == 'chromium'
+        run: |
+          node tools/trace.js
+          git diff --exit-code docs/traceability.md
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: playwright-report-${{ matrix.project }}
+          path: |
+            playwright-report
+            reports
+
+  # Nightly only: every test five times in a row with no retries, to catch flaky tests early.
+  stability:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test --project=chromium --repeat-each=5 --retries=0
+      - name: Run summary
+        if: always()
+        run: node tools/summary.js >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: stability-report
+          path: |
+            playwright-report
+            reports
+
+  # Publishes the Playwright report as a website: https://jahidulislamrihan26.github.io/playwright-ui-automation-pom/
+  pages:
+    needs: ui
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/download-artifact@v7
+        with:
+          name: playwright-report-chromium
+          path: site
+      - run: cp .github/pages/index.html site/index.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v5

@@ -2,7 +2,7 @@ import { test, expect, catalog, validInfo } from '../fixtures';
 import { users } from '../data/users';
 
 // The site ships special users with built-in faults. These tests state the CORRECT behaviour and are marked as
-// expected failures (test.fail), the same defects logged in the manual-testing project.
+// expected failures (test.fail), the same defects logged in the manual-testing repo.
 test.use({ storageState: { cookies: [], origins: [] } });
 
 test.describe('problem_user', () => {

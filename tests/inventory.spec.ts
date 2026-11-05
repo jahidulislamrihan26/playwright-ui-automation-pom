@@ -64,7 +64,7 @@ test.describe('Product catalogue', () => {
     await expect(inventoryPage.removeButton('Sauce Labs Bike Light')).toBeVisible();
   });
 
-  // KNOWN DEFECT (manual project BUG-017). test.fail() = we EXPECT this to fail today.
+  // KNOWN DEFECT (manual-testing repo BUG-017). test.fail() = we EXPECT this to fail today.
   test('[TC-080] the chosen sort order is kept after viewing a product [BUG-017] @known-bug', async ({ inventoryPage, productDetailPage }) => {
     test.fail(true, 'BUG-017: sort resets to Name A to Z after viewing a product');
     await inventoryPage.sortBy('hilo');

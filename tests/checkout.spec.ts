@@ -82,7 +82,7 @@ test.describe('Checkout', () => {
 });
 
 test.describe('Checkout: known defects', () => {
-  // Each test states the CORRECT behaviour and is marked as an expected failure (see the manual-testing project).
+  // Each test states the CORRECT behaviour and is marked as an expected failure (see the manual-testing repo).
   test('[TC-038] checkout is blocked when the cart is empty [BUG-001] @known-bug', async ({ page, inventoryPage, cartPage }) => {
     test.fail(true, 'BUG-001: empty cart can be checked out');
     await inventoryPage.goto();
