@@ -8,21 +8,7 @@ const { spawnSync } = require('child_process');
 const ROOT = path.join(__dirname, '..');
 const MANUAL = path.join(ROOT, 'data', 'manual-test-cases.csv'); // snapshot of the manual suite; refresh with: npm run trace:refresh
 
-// minimal CSV reader (quotes and commas inside quotes)
-function parseCsv(text) {
-  const rows = []; let row = [], cell = '', q = false;
-  text = text.replace(/^﻿/, '');
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-    if (q) { if (c === '"' && text[i + 1] === '"') { cell += '"'; i++; } else if (c === '"') q = false; else cell += c; }
-    else if (c === '"') q = true;
-    else if (c === ',') { row.push(cell); cell = ''; }
-    else if (c === '\n' || c === '\r') { if (c === '\r' && text[i + 1] === '\n') i++; row.push(cell); rows.push(row); row = []; cell = ''; }
-    else cell += c;
-  }
-  if (cell || row.length) { row.push(cell); rows.push(row); }
-  return rows;
-}
+const { parseCsv } = require('./csv');
 const [head, ...body] = parseCsv(fs.readFileSync(MANUAL, 'utf8')).filter((r) => r.length > 1);
 const col = (n) => head.indexOf(n);
 const manual = body.map((r) => ({ id: r[col('ID')], module: r[col('Module')], title: r[col('Title')], status: r[col('Status')], defect: r[col('Defect')] }));

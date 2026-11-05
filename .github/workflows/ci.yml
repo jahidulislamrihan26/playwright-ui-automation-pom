@@ -37,6 +37,8 @@ jobs:
         run: npm audit --audit-level=high
       - run: npm run typecheck
       - run: npm run lint
+      - name: Tests for the project's own tooling
+        run: npm run test:tools
       - name: Every relative link in the documents works
         run: node tools/check-links.js
       # The one-time login setup runs in Chromium, so every matrix job needs it as well as its own browser.

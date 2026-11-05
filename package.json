@@ -26,6 +26,7 @@
     "test:all-browsers": "playwright test",
     "test:stability": "playwright test --project=chromium --repeat-each=5",
     "summary": "node tools/summary.js",
+    "test:tools": "node --test tools/test/",
     "trace": "node tools/trace.js",
     "trace:refresh": "node tools/refresh-manual.js && node tools/trace.js",
     "check-links": "node tools/check-links.js",
