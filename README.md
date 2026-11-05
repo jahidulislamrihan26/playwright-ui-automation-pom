@@ -103,5 +103,6 @@ Set `BASE_URL` to test another environment and `SAUCE_PASSWORD` to change the sh
 
 ## Related projects
 - [manual-testing-saucedemo](https://github.com/jahidulislamrihan26/manual-testing-saucedemo): the manual test suite and 20 defect reports this project automates (snapshot of its test cases in `data/manual-test-cases.csv`; refresh with `npm run trace:refresh`).
+- [cypress-e2e-saucedemo](https://github.com/jahidulislamrihan26/cypress-e2e-saucedemo) and [selenium-pytest-saucedemo](https://github.com/jahidulislamrihan26/selenium-pytest-saucedemo): the same site automated in Cypress and in Selenium with Python, to compare the tools.
 - [api-testing-newman-openapi](https://github.com/jahidulislamrihan26/api-testing-newman-openapi) and [k6-performance-testing](https://github.com/jahidulislamrihan26/k6-performance-testing): API and performance testing.
 - [qa-templates](https://github.com/jahidulislamrihan26/qa-templates): reusable test plan and report templates.
